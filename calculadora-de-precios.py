@@ -1,7 +1,28 @@
 import streamlit as st
+from PIL import Image  # Importás para usar imágenes
 
+# 🔹 Esta línea debe ser la PRIMERA de Streamlit y SOLO UNA VEZ
 st.set_page_config(page_title="Calculadora de Precios", page_icon="💰")
 
+# Mostrar logo
+logo = Image.open("logo_axia.png")
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image(logo, width=500)
+
+# (CSS personalizado)
+st.markdown("""
+<style>
+body {
+    background-color: #F8F5F2;
+}
+h1 {
+    color: #C7A77E;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Título y descripción
 st.title("💼 Calculadora de Precio de Venta")
 st.markdown("Calculá tu precio ideal y margen de ganancia de forma rápida 🚀")
 
